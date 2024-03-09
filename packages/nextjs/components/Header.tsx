@@ -1,10 +1,12 @@
 "use client";
 
 import React, { useCallback, useRef, useState } from "react";
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Bars3Icon, BugAntIcon } from "@heroicons/react/24/outline";
+import { useAccount } from "wagmi";
+import { BanknotesIcon, Bars3Icon, BugAntIcon, HeartIcon, UserIcon } from "@heroicons/react/24/outline";
+import { SwitchTheme } from "~~/components/SwitchTheme";
 import { FaucetButton, RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
 import { useOutsideClick } from "~~/hooks/scaffold-eth";
 
@@ -16,17 +18,25 @@ type HeaderMenuLink = {
 
 export const menuLinks: HeaderMenuLink[] = [
   {
-    label: "Home",
-    href: "/",
+    label: "Campaigns",
+    href: "/campaigns",
+    icon: <HeartIcon className="h-5 w-5" />,
   },
   {
-    label: "Debug Contracts",
-    href: "/debug",
-    icon: <BugAntIcon className="h-4 w-4" />,
+    label: "Funders",
+    href: "/funders",
+    icon: <BanknotesIcon className="h-5 w-5" />,
   },
+  // {
+  //   label: "Debug Contracts",
+  //   href: "/debug",
+  //   icon: <BugAntIcon className="h-5 w-5" />,
+  // },
 ];
 
 export const HeaderMenuLinks = () => {
+  const { address: connectedAddress } = useAccount();
+
   const pathname = usePathname();
 
   return (
@@ -39,8 +49,8 @@ export const HeaderMenuLinks = () => {
               href={href}
               passHref
               className={`${
-                isActive ? "bg-secondary shadow-md" : ""
-              } hover:bg-secondary hover:shadow-md focus:!bg-secondary active:!text-neutral py-1.5 px-3 text-sm rounded-full gap-2 grid grid-flow-col`}
+                isActive ? "bg-none shadow-md" : ""
+              } text-xl active:!text-neutral py-1.5 px-3 text-sm rounded-full gap-2 grid grid-flow-col`}
             >
               {icon}
               <span>{label}</span>
@@ -48,6 +58,18 @@ export const HeaderMenuLinks = () => {
           </li>
         );
       })}
+      {connectedAddress && (
+        <li key="/profile">
+          <Link
+            href="/profile"
+            passHref
+            className={`text-xl active:!text-neutral py-1.5 px-3 text-sm rounded-full gap-2 grid grid-flow-col`}
+          >
+            <UserIcon className="h-5 w-5" />
+            <span>Profile</span>
+          </Link>
+        </li>
+      )}
     </>
   );
 };
@@ -64,7 +86,9 @@ export const Header = () => {
   );
 
   return (
-    <div className="sticky lg:static top-0 navbar bg-base-100 min-h-0 flex-shrink-0 justify-between z-20 shadow-md shadow-secondary px-0 sm:px-2">
+    <div
+      className={`bg-base-300 sticky border-b border-primary lg:static top-0 navbar min-h-0 flex-shrink-0 justify-between z-20 px-0 sm:px-2`}
+    >
       <div className="navbar-start w-auto lg:w-1/2">
         <div className="lg:hidden dropdown" ref={burgerMenuRef}>
           <label
@@ -89,12 +113,9 @@ export const Header = () => {
           )}
         </div>
         <Link href="/" passHref className="hidden lg:flex items-center gap-2 ml-4 mr-6 shrink-0">
-          <div className="flex relative w-10 h-10">
-            <Image alt="SE2 logo" className="cursor-pointer" fill src="/logo.svg" />
-          </div>
           <div className="flex flex-col">
-            <span className="font-bold leading-tight">Scaffold-ETH</span>
-            <span className="text-xs">Ethereum dev stack</span>
+            <span className="font-madimi leading-tight text-3xl">🍄 FundGuys</span>
+            {/* <span className="text-xs">Public Goods Funding</span> */}
           </div>
         </Link>
         <ul className="hidden lg:flex lg:flex-nowrap menu menu-horizontal px-1 gap-2">
@@ -104,6 +125,7 @@ export const Header = () => {
       <div className="navbar-end flex-grow mr-4">
         <RainbowKitCustomConnectButton />
         <FaucetButton />
+        <SwitchTheme />
       </div>
     </div>
   );
