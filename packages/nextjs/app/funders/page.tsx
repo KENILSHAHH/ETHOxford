@@ -3,11 +3,11 @@
 import Image from "next/image";
 import type { NextPage } from "next";
 import { SkeletonLoader } from "~~/components/fundguys/SkeletonLoader";
-import { useFetchNFTs } from "~~/hooks/fundguys/useFetchNFTs";
+import { useFetchNFTs } from "~~/hooks/fundguys/usefetchNFTs";
 import { useDeployedContractInfo } from "~~/hooks/scaffold-eth/";
 
 const Funders: NextPage = () => {
-  const { data: mycologuysContract } = useDeployedContractInfo("Mycologuys");
+  const { data: mycologuysContract } = useDeployedContractInfo("Monkey");
 
   const { nfts, isLoading, error } = useFetchNFTs(mycologuysContract?.address || "");
 

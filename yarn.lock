@@ -791,6 +791,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@headlessui/react@npm:^1.7.18":
+  version: 1.7.18
+  resolution: "@headlessui/react@npm:1.7.18"
+  dependencies:
+    "@tanstack/react-virtual": ^3.0.0-beta.60
+    client-only: ^0.0.1
+  peerDependencies:
+    react: ^16 || ^17 || ^18
+    react-dom: ^16 || ^17 || ^18
+  checksum: 7463167b4cf2ad57f92c2deedd6429a245dfc4d979ead5533d2e83429e3e4dd39c346e5a8fd958e6bd9e2fba42486af97577b7dd3137f5a797dacc93632578ba
+  languageName: node
+  linkType: hard
+
 "@heroicons/react@npm:~2.0.11":
   version: 2.0.18
   resolution: "@heroicons/react@npm:2.0.18"
@@ -1980,17 +1993,21 @@ __metadata:
   resolution: "@se-2/nextjs@workspace:packages/nextjs"
   dependencies:
     "@ethersproject/providers": ~5.7.2
+    "@headlessui/react": ^1.7.18
     "@heroicons/react": ~2.0.11
     "@rainbow-me/rainbowkit": 1.3.5
     "@trivago/prettier-plugin-sort-imports": ~4.1.1
     "@types/node": ^17.0.45
     "@types/nprogress": ^0
+    "@types/qs": ^6
     "@types/react": ^18.0.21
     "@types/react-copy-to-clipboard": ^5.0.4
+    "@types/react-modal": ^3
     "@typescript-eslint/eslint-plugin": ~5.40.0
     "@uniswap/sdk-core": ~4.0.1
     "@uniswap/v2-sdk": ~3.0.1
     autoprefixer: ~10.4.12
+    axios: ^1.6.7
     blo: ~1.0.1
     daisyui: 4.5.0
     eslint: ~8.24.0
@@ -2003,10 +2020,14 @@ __metadata:
     postcss: ~8.4.16
     prettier: ~2.8.4
     qrcode.react: ~3.1.0
+    qs: ^6.11.2
     react: ~18.2.0
     react-copy-to-clipboard: ~5.1.0
     react-dom: ~18.2.0
+    react-hook-form: ^7.50.1
     react-hot-toast: ~2.4.0
+    react-modal: ^3.16.1
+    swr: ^2.2.5
     tailwindcss: ~3.3.3
     type-fest: ~4.6.0
     typescript: ~5.1.6
@@ -2358,6 +2379,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tanstack/react-virtual@npm:^3.0.0-beta.60":
+  version: 3.1.3
+  resolution: "@tanstack/react-virtual@npm:3.1.3"
+  dependencies:
+    "@tanstack/virtual-core": 3.1.3
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: f241baf92b4709c6c7dcf491fb6d22597fe87d8915c6f6bafb453337b754febaa5797163e106999e3b1a4aa8df33bb4ee677fe9e39cdda983deaaf4d93352427
+  languageName: node
+  linkType: hard
+
+"@tanstack/virtual-core@npm:3.1.3":
+  version: 3.1.3
+  resolution: "@tanstack/virtual-core@npm:3.1.3"
+  checksum: 7bc56869300775be40ca1961539af321bd115ca59fd5c48748f88c53690ed50cff99351d9ec2b063c75602291baa1d1815e3de1888ac6c850b563cfd1f05cc29
+  languageName: node
+  linkType: hard
+
 "@tootallnate/once@npm:2.0.0":
   version: 2.0.0
   resolution: "@tootallnate/once@npm:2.0.0"
@@ -2683,7 +2723,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/qs@npm:^6.2.31, @types/qs@npm:^6.9.7":
+"@types/qs@npm:^6, @types/qs@npm:^6.2.31, @types/qs@npm:^6.9.7":
   version: 6.9.12
   resolution: "@types/qs@npm:6.9.12"
   checksum: 76be8068091058987bb49aca59e9714ff856661cdc2340499f9d502c78950ac08e7ecbca256c8a72c4c83714bce30e6aaad13f9f739e8c0c436c0eedb2a2627c
@@ -2696,6 +2736,15 @@ __metadata:
   dependencies:
     "@types/react": "*"
   checksum: adc2970c8756e648daa06e294c422df3dc076a784344ab2ecb78a17ebd7e8e3dfd7f31e68c24267de4815cdeec573a743d952a308b45b8380f6b7912a9a8b911
+  languageName: node
+  linkType: hard
+
+"@types/react-modal@npm:^3":
+  version: 3.16.3
+  resolution: "@types/react-modal@npm:3.16.3"
+  dependencies:
+    "@types/react": "*"
+  checksum: 53c92dfbe46aae6f4ca4d96a166fd69a4b8dc539c5e8f755086dd1471656924ca6dd0a179be746c634686a0073aef67bb9615ee8600d9536cc1521b738e48453
   languageName: node
   linkType: hard
 
@@ -7126,6 +7175,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"exenv@npm:^1.2.0":
+  version: 1.2.2
+  resolution: "exenv@npm:1.2.2"
+  checksum: a894f3b60ab8419e0b6eec99c690a009c8276b4c90655ccaf7d28faba2de3a6b93b3d92210f9dc5efd36058d44f04098f6bbccef99859151104bfd49939904dc
+  languageName: node
+  linkType: hard
+
 "exit-hook@npm:2.2.1":
   version: 2.2.1
   resolution: "exit-hook@npm:2.2.1"
@@ -11165,7 +11221,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.8.1":
+"prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:
@@ -11230,7 +11286,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"qs@npm:^6.4.0, qs@npm:^6.9.4":
+"qs@npm:^6.11.2, qs@npm:^6.4.0, qs@npm:^6.9.4":
   version: 6.12.0
   resolution: "qs@npm:6.12.0"
   dependencies:
@@ -11341,6 +11397,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-hook-form@npm:^7.50.1":
+  version: 7.51.0
+  resolution: "react-hook-form@npm:7.51.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17 || ^18
+  checksum: c3d9996a2c2867994f10d1f598ca24b0dee019221116750ebe64f5abb422081b76b217c0265807485c9f2fc7b2e8c2aa8bed153cbf86fa0c2603d42b714f20eb
+  languageName: node
+  linkType: hard
+
 "react-hot-toast@npm:~2.4.0":
   version: 2.4.1
   resolution: "react-hot-toast@npm:2.4.1"
@@ -11357,6 +11422,28 @@ __metadata:
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
   checksum: f7a19ac3496de32ca9ae12aa030f00f14a3d45374f1ceca0af707c831b2a6098ef0d6bdae51bd437b0a306d7f01d4677fcc8de7c0d331eb47ad0f46130e53c5f
+  languageName: node
+  linkType: hard
+
+"react-lifecycles-compat@npm:^3.0.0":
+  version: 3.0.4
+  resolution: "react-lifecycles-compat@npm:3.0.4"
+  checksum: a904b0fc0a8eeb15a148c9feb7bc17cec7ef96e71188280061fc340043fd6d8ee3ff233381f0e8f95c1cf926210b2c4a31f38182c8f35ac55057e453d6df204f
+  languageName: node
+  linkType: hard
+
+"react-modal@npm:^3.16.1":
+  version: 3.16.1
+  resolution: "react-modal@npm:3.16.1"
+  dependencies:
+    exenv: ^1.2.0
+    prop-types: ^15.7.2
+    react-lifecycles-compat: ^3.0.0
+    warning: ^4.0.3
+  peerDependencies:
+    react: ^0.14.0 || ^15.0.0 || ^16 || ^17 || ^18
+    react-dom: ^0.14.0 || ^15.0.0 || ^16 || ^17 || ^18
+  checksum: 978936e9320fad839c039b9ee4de55d40888156cb40e093615d6fbc2ff07139d5db06f14782cb7767f780bd5fb57956778669426c535ebc0068a7a03882c7e75
   languageName: node
   linkType: hard
 
@@ -11917,10 +12004,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "se-2@workspace:."
   dependencies:
-    axios: ^1.6.7
     husky: ~8.0.3
     lint-staged: ~13.2.2
-    swr: ^2.2.5
   languageName: unknown
   linkType: soft
 
@@ -13787,6 +13872,15 @@ __metadata:
     typescript:
       optional: true
   checksum: 7c1cb64c53e29899d508142e43a450b07f7f4f0ac2a19f5651f0f3dbfe2bb5b159d2b6251f6f613bd9bae007dc8390383ff79f5ab7bdf8d06788fe0bbdb3f8ab
+  languageName: node
+  linkType: hard
+
+"warning@npm:^4.0.3":
+  version: 4.0.3
+  resolution: "warning@npm:4.0.3"
+  dependencies:
+    loose-envify: ^1.0.0
+  checksum: 4f2cb6a9575e4faf71ddad9ad1ae7a00d0a75d24521c193fa464f30e6b04027bd97aa5d9546b0e13d3a150ab402eda216d59c1d0f2d6ca60124d96cd40dfa35c
   languageName: node
   linkType: hard
 
