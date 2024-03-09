@@ -130,21 +130,29 @@ const config: HardhatUserConfig = {
       url: "https://raptorbig-rpc.eu-north-2.gateway.fm",
       accounts: [deployerPrivateKey],
     },
-    flareTestnet: {
+    coston2: {
       url: "https://coston2-api.flare.network/ext/bc/C/rpc",
       accounts: [deployerPrivateKey],
     },  
   
   },
   // configuration for harhdat-verify plugin
-  etherscan: {
-    apiKey: `${etherscanApiKey}`,
-  },
+
   // configuration for etherscan-verify from hardhat-deploy plugin
-  verify: {
-    etherscan: {
-      apiKey: `${etherscanApiKey}`,
+ etherscan: {
+    apiKey: {
+      coston2: "coston2", // API key is not needed, but we need to provide a value
     },
+    customChains: [
+      {
+        network: "coston2",
+        chainId: 114,
+        urls: {
+          apiURL: "https://api.routescan.io/v2/network/testnet/evm/114/etherscan",
+          browserURL: "https://coston2.testnet.flarescan.com"
+        }
+      }
+    ]
   },
   sourcify: {
     enabled: false,
