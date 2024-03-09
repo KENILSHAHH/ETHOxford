@@ -47,16 +47,7 @@ const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEn
     targetAmount: hre.ethers.parseEther("10.00"),
     deadline: Math.floor(new Date("2024-06-09").getTime() / 1000),
     image: "https://buidlguidl.com/assets/hero.png",
-  };
-
-  await publicGoodsFunding.createProject(
-    fundGuys.title,
-    fundGuys.description,
-    fundGuys.wethContractAddress,
-    fundGuys.targetAmount,
-    fundGuys.deadline,
-    fundGuys.image,
-  );
+  }
 
   await publicGoodsFunding.createProject(
     buidlGuidl.title,
@@ -73,3 +64,4 @@ export default deployYourContract;
 // Tags are useful if you have multiple deploy files and only want to run one of them.
 // e.g. yarn deploy --tags YourContract
 deployYourContract.tags = ["main"];
+
