@@ -77,7 +77,7 @@ export const useScaffoldEventHistory = <
           event,
           args: filters as any, // TODO: check if it works and fix type
           fromBlock: fromBlock || fromBlockUpdated,
-          toBlock: blockNumber,
+          toBlock: 8021644n,
         });
         setFromBlockUpdated(blockNumber + 1n);
 

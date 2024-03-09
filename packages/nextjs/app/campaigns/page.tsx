@@ -10,7 +10,7 @@ const Campaigns: NextPage = () => {
   const { data, isLoading } = useScaffoldEventHistory({
     contractName: "PublicGoodsFunding",
     eventName: "ProjectCreated",
-    fromBlock: 0n, 
+    fromBlock: 8021630n, 
   });
   return (
     <>

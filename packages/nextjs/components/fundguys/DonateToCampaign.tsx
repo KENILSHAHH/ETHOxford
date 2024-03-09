@@ -6,21 +6,11 @@ import { TokenSymbol } from "~~/components/fundguys/";
 
 const SUPPORTED_TOKENS = [
   {
-    symbol: "USDC",
-    address: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-    decimals: 6,
-  },
-  {
-    symbol: "DAI",
-    address: "0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb",
+    symbol: "KEN",
+    address: "0x07D0d1Ca04FA764cBEC97eb7E2427fC5306FE068",
     decimals: 18,
-  },
-  {
-    symbol: "WETH",
-    address: "0x4200000000000000000000000000000000000006",
-    decimals: 18,
-  },
-];
+  }
+]
 
 const tokensByAddress = SUPPORTED_TOKENS.reduce((tokenMap, token) => ({ ...tokenMap, [token.address]: token }), {});
 
