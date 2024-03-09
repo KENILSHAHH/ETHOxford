@@ -19,7 +19,7 @@ contract Monkey is ERC721, Ownable {
 	/**
 	 * Starting from one to match hashlips art engine configuration
 	 */
-	constructor() ERC721("Monkey", "MNK") Ownable(msg.sender) {
+	constructor() ERC721("Monkey", "MNK") Ownable() {
 		s_tokenCounter = 1;
 	}
 

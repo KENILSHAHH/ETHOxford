@@ -5,7 +5,7 @@ import { Project } from "./Project.sol";
 import { Monkey } from "./Monkey.sol";
 import  "@openzeppelin/contracts/access/Ownable.sol";
 
-contract PublicGoodsFunding is Ownable(msg.sender) {
+contract PublicGoodsFunding is Ownable() {
 	// State variables
 	Monkey nftContract;
 	mapping(address => bool) projects;

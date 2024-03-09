@@ -21,7 +21,7 @@ const etherscanApiKey = process.env.ETHERSCAN_API_KEY || "DNXJA8RX2Q3VZ4URQIWP7Z
 
 const config: HardhatUserConfig = {
   solidity: {
-    version: "0.8.17",
+    version: "0.8.24",
     settings: {
       optimizer: {
         enabled: true,
@@ -126,6 +126,15 @@ const config: HardhatUserConfig = {
       url: "https://sepolia.publicgoods.network",
       accounts: [deployerPrivateKey],
     },
+    raptorBig: {
+      url: "https://raptorbig-rpc.eu-north-2.gateway.fm",
+      accounts: [deployerPrivateKey],
+    },
+    flareTestnet: {
+      url: "https://coston2-api.flare.network/ext/bc/C/rpc",
+      accounts: [deployerPrivateKey],
+    },  
+  
   },
   // configuration for harhdat-verify plugin
   etherscan: {
