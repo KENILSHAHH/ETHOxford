@@ -9,9 +9,9 @@ Donate and receive Monkey NFT!
 
 Follow the steps below to get started:
 
-Connect Wallet
-Create a campaign
-Fund your favourite campaign!
+Connect Wallet,
+Create a campaign,
+Fund your favourite campaign!,
 Bonus: Click Share to share their story on Warpcast!
 
 Avalanche Teleporter is used to cross mint the NFTS across and it enables users to Donate to campaigns from any chain
