@@ -5,9 +5,46 @@ import {ERC721}from  "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import { Strings } from "@openzeppelin/contracts/utils/Strings.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
+import "https://github.com/ava-labs/teleporter/blob/main/contracts/src/Teleporter/ITeleporterMessenger.sol";
+import "https://github.com/ava-labs/teleporter/blob/main/contracts/src/Teleporter/ITeleporterReceiver.sol";
+
 error Monkey__TokenUriNotFound();
 
-contract Monkey is ERC721, Ownable {
+contract Monkey is ERC721, Ownable,ITeleporterReceiver {
+   struct Message {
+        address sender;
+        string message;
+    }
+  
+  	mapping(bytes32 => Message) private _messages;
+
+    ITeleporterMessenger public immutable teleporterMessenger;
+
+    // Errors
+    error Unauthorized();
+
+    constructor(address teleporterMessengerAddress) {
+        teleporterMessenger = ITeleporterMessenger(teleporterMessengerAddress);
+    }
+
+    /**
+     * @dev See {ITeleporterReceiver-receiveTeleporterMessage}.
+     *
+     * Receives a message from another chain.
+     */
+    function receiveTeleporterMessage(
+        bytes32 originChainID,
+        address originSenderAddress,
+        bytes calldata message
+    ) external {
+      	// Only the Teleporter receiver can deliver a message.
+        if (msg.sender != address(teleporterMessenger)) {
+            revert Unauthorized();
+        }
+      
+        string memory messageString = abi.decode(message, (string));
+        _messages[originChainID] = Message(originSenderAddress, messageString);
+    }
 	// State variables
 	string public baseUri =
 		"ipfs://QmSAAC4YBnXnv4JiZzR6DXQpEveTgciq93hhmzr9hs5LCV/";
