@@ -7,6 +7,13 @@ Enable Donate Swaps
 Reinventing Crowdfunding Incentivization
 Donate and receive Monkey NFT!
 
+Follow the steps below to get started:
+
+Connect Wallet
+Create a campaign
+Fund your favourite campaign!
+Bonus: Click Share to share their story on Warpcast!
+
 Monkey NFT collection
 
 ![NFT](https://github.com/KENILSHAHH/ETHOxford/assets/93181200/73a14a07-4e99-427b-bbec-bcc09e4c3e2a)
@@ -21,4 +28,14 @@ Monkey Contract Deployed on Flare Testnet [0xFdA2851c782a673e2a7892248713D94200F
 Funding Contract Deployed on raptorBig presto Testnet at [0x45afbd1e3d967369411c63C20C91003302A4C008](https://raptorbig-blockscout.eu-north-2.gateway.fm/address/0x45afbd1e3d967369411c63C20C91003302A4C008) 
 
 Monkey Contract Deployed on raptorBig presto testnet at Presto Testnet [0x3e13805e31D2b00003dE81521F0256D46E694982](https://raptorbig-blockscout.eu-north-2.gateway.fm/address/0x3e13805e31D2b00003dE81521F0256D46E694982)
+
+
+Install dependencies:
+
+``yarn install``
+
+Start NextJS App:
+
+``yarn start``
+
 
