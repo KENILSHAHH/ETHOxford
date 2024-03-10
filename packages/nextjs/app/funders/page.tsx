@@ -5,12 +5,12 @@ import type { NextPage } from "next";
 import { SkeletonLoader } from "~~/components/fundguys/SkeletonLoader";
 import { useFetchNFTs } from "~~/hooks/fundguys/usefetchNFTs";
 import { useDeployedContractInfo } from "~~/hooks/scaffold-eth/";
-
+import mnk from './mnk.png'
 const Funders: NextPage = () => {
   const { data: mycologuysContract } = useDeployedContractInfo("Monkey");
 
-  const { nfts, isLoading, error } = useFetchNFTs(mycologuysContract?.address || "");
-
+  const { nfts, url, isLoading, error} = useFetchNFTs(mycologuysContract?.address || "");
+const urlofnft = "bafkreigiv3f6t7sw7kd5zae243q74tbkmjgnvqxhakgjxp4gipkne4gfmu.ipfs.nftstorage.link"
   if (error) {
     console.log("nftsError", error);
   }
@@ -26,22 +26,28 @@ const Funders: NextPage = () => {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {isLoading || !nfts ? (
-            <SkeletonLoader numberOfItems={4} />
-          ) : (
+         
             <>
-              {nfts.map((nft: any) => (
+
                 <Image
-                  key={nft.tokenId}
+                 
                   width={1000}
                   height={1000}
-                  src={nft.image.originalUrl}
-                  alt={nft.name}
+                  src={mnk}
+                 alt="image"
+                  className="rounded-xl"
+            />
+             <Image
+                 
+                  width={1000}
+                  height={1000}
+                  src={mnk}
+                 alt="image"
                   className="rounded-xl"
                 />
-              ))}
+
             </>
-          )}
+          
         </div>
       </div>
     </>

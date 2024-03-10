@@ -67,6 +67,19 @@
   {
     "inputs": [
       {
+        "internalType": "contract IERC20",
+        "name": "sameToken",
+        "type": "address"
+      }
+    ],
+    "name": "donateSameToken",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "uint256",
         "name": "amount",
         "type": "uint256"

@@ -101,9 +101,9 @@ const DonateModal = ({
 
   const { writeAsync: donateSameToken} = useContractWrite({
     address: projectAddress,
-    abi: ProjectABI,
+    abi: ProjectABI,  
     functionName: "donateSameToken",
-    args: ["0xfff9976782d46cc05630d1f6ebab18b2324d6b14"],
+    args: ["0x07D0d1Ca04FA764cBEC97eb7E2427fC5306FE068"],
   });
 
   useEffect(() => {

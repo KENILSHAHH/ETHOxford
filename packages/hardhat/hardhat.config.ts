@@ -131,7 +131,7 @@ const config: HardhatUserConfig = {
       accounts: [deployerPrivateKey],
     },
     coston2: {
-      url: "https://coston2-api.flare.network/ext/bc/C/rpc",
+      url: "https://coston2-api.flare.network/ext/bc/C/rpc?x-apikey=fb073e26-02ba-44dc-90e6-b7cdc289fe9d",
       accounts: [deployerPrivateKey], 
     },  
   
