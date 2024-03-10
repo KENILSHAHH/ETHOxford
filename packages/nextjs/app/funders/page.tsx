@@ -6,6 +6,7 @@ import { SkeletonLoader } from "~~/components/fundguys/SkeletonLoader";
 import { useFetchNFTs } from "~~/hooks/fundguys/usefetchNFTs";
 import { useDeployedContractInfo } from "~~/hooks/scaffold-eth/";
 import mnk from './mnk.png'
+import nft from './NFT.png'
 const Funders: NextPage = () => {
   const { data: mycologuysContract } = useDeployedContractInfo("Monkey");
 
@@ -41,7 +42,7 @@ const urlofnft = "bafkreigiv3f6t7sw7kd5zae243q74tbkmjgnvqxhakgjxp4gipkne4gfmu.ip
                  
                   width={1000}
                   height={1000}
-                  src={mnk}
+                  src={nft}
                  alt="image"
                   className="rounded-xl"
                 />
