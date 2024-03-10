@@ -9,7 +9,7 @@ Donate and receive Monkey NFT!
 
 Monkey NFT collection
 
-![NFT](https://github.com/KENILSHAHH/ETHOxford/assets/93181200/73a14a07-4e99-427b-bbec-bcc09e4c3e2a)![Screenshot 2024-03-10 192320](https://github.com/KENILSHAHH/ETHOxford/assets/93181200/9cab9a38-b807-404c-adc1-7ea9442aa243)
+![NFT](https://github.com/KENILSHAHH/ETHOxford/assets/93181200/73a14a07-4e99-427b-bbec-bcc09e4c3e2a)[Screenshot 2024-03-10 192320](https://github.com/KENILSHAHH/ETHOxford/assets/93181200/9cab9a38-b807-404c-adc1-7ea9442aa243)
 
 🧪This Repo is made with Scaffold ETH 2
 
