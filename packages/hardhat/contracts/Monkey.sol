@@ -100,6 +100,23 @@ contract Monkey is ERC721, Ownable,ITeleporterReceiver {
 	function setBaseUri(string memory _baseUri) public onlyOwner {
 		baseUri = _baseUri;
 	}
+function sendMessage(
+        address destinationAddress,
+        string calldata message
+    ) external {
+        teleporterMessenger.sendCrossChainMessage(
+            TeleporterMessageInput({
+                destinationBlockchainID: 0x9f3be606497285d0ffbb5ac9ba24aa60346a9b1812479ed66cb329f394a4b1c7,
+                destinationAddress: destinationAddress,
+                feeInfo: TeleporterFeeInfo({
+                    feeTokenAddress: address(0),
+                    amount: 0
+                }),
+                requiredGasLimit: 100000,
+                allowedRelayerAddresses: new address[](0),
+                message: abi.encode(message)
+            })
+        );
 
 	function setMaxSupply(uint256 _maxSupply) public onlyOwner {
 		s_maxSupply = _maxSupply;
