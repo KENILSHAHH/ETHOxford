@@ -11,6 +11,18 @@ import "https://github.com/ava-labs/teleporter/blob/main/contracts/src/Teleporte
 error Monkey__TokenUriNotFound();
 
 contract Monkey is ERC721, Ownable,ITeleporterReceiver {
+ ITeleporterMessenger public immutable teleporterMessenger = ITeleporterMessenger(0x253b2784c75e510dD0fF1da844684a1aC0aa5fcf);
+
+    string public lastMessage;
+
+    function receiveTeleporterMessage(
+        bytes32 originChainID,
+        address originSenderAddress,
+        bytes calldata message
+    ) external {
+        // Store the message.
+        lastMessage = abi.decode(message, (string));
+    }
    struct Message {
         address sender;
         string message;
