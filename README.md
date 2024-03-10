@@ -1,9 +1,16 @@
 # 🏗 MonkeyNFTs
 
-<h4 align="center">
-  <a href="https://docs.scaffoldeth.io">Documentation</a> |
-  <a href="https://scaffoldeth.io">Website</a>
-</h4>
+Decentralized Public Goods Funding
+Monkey aims to bring the ethos of decentralization public good funding to the masses.
+Enable crowdfunding services to all users without barrier.
+Enable Donate Swaps
+Reinventing Crowdfunding Incentivization
+Donate and receive Monkey NFT!
+
+Monkey NFT collection
+
+![NFT](https://github.com/KENILSHAHH/ETHOxford/assets/93181200/73a14a07-4e99-427b-bbec-bcc09e4c3e2a)
+![Screenshot 2024-03-10 192320](https://github.com/KENILSHAHH/ETHOxford/assets/93181200/9cab9a38-b807-404c-adc1-7ea9442aa243)
 
 🧪This Repo is made with Scaffold ETH 2
 
