@@ -30,7 +30,7 @@ const config: HardhatUserConfig = {
       },
     },
   },
-  defaultNetwork: "localhost",
+  defaultNetwork: "scrollSepolia",
   namedAccounts: {
     deployer: {
       // By default, it will take the first Hardhat account as the deployer
@@ -141,9 +141,18 @@ const config: HardhatUserConfig = {
   // configuration for etherscan-verify from hardhat-deploy plugin
  etherscan: {
     apiKey: {
-      coston2: "coston2", // API key is not needed, but we need to provide a value
+    
+     scrollSepolia:"scrollSepolia",// API key is not needed, but we need to provide a value
     },
-    customChains: [
+   customChains: [
+    {
+        network: 'scrollSepolia',
+        chainId: 534351,
+        urls: {
+          apiURL: 'https://sepolia-blockscout.scroll.io/api',
+          browserURL: 'https://sepolia-blockscout.scroll.io/',
+        },
+      },
       {
         network: "coston2",
         chainId: 114,
